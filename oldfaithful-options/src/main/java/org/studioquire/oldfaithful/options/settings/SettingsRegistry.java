@@ -123,7 +123,8 @@ public final class SettingsRegistry {
 
 	/** Whether the file now holds something the game will only take up after a restart. */
 	boolean waitingForRestart(Setting s) {
-		if (s.applyNow != null) return false;
+		// With both, some changes apply at once and some wait: what's running tells which.
+		if (s.applyNow != null && s.running == null) return false;
 		String running = s.running != null ? s.normalize(s.running.get()) : firstSeen.get(s);
 		return running != null && !running.equals(value(s));
 	}

@@ -84,7 +84,9 @@ public final class Setting {
 
 	/**
 	 * For a setting that waits for a restart: the value the game is running with, so the button can show a change is
-	 * waiting. Without this, the value the file held when the screen was first opened stands for it.
+	 * waiting. Without this, the value the file held when the screen was first opened stands for it. With
+	 * {@link #applyNow} too, for one that takes some changes at once and waits for others: a change waits while this
+	 * still differs from the file after applyNow has run.
 	 */
 	public Setting running(Supplier<String> running) {
 		this.running = running;

@@ -5,6 +5,14 @@ its server package, and names the Pure Faithful release it's built on, whose mod
 that release has them; [Pure Faithful's changelog](https://github.com/studio-quire/pure-faithful/blob/main/CHANGELOG.md)
 covers those. Entries say what a player or server owner notices.
 
+## 0.1.2 (2026-11-03)
+
+Released with the first Still Faithful, which carries it; still on Pure Faithful 0.1.3. Nothing changes for Old
+Faithful players.
+
+- The settings screen can show a setting whose choices switch partly at once and partly after a restart (Still
+  Faithful's Dusk).
+
 ## 0.1.1 (2026-11-02)
 
 On Pure Faithful 0.1.3, which brings its own fixes (see its changelog). New fixes, each on its own switch:

@@ -106,6 +106,30 @@ class SettingsRegistryTest {
 	}
 
 	@Test
+	void partlyAtOnceWaitsOnlyWhereWhatsRunningDiffers(@TempDir Path dir) throws Exception {
+		// Still Faithful's dusk: stepped and smooth switch at once, beta (no mixins) only after a restart.
+		SettingsRegistry r = new SettingsRegistry(dir);
+		r.group("g", "G", 1);
+		AtomicReference<String> live = new AtomicReference<>("stepped");
+		Setting dusk = Setting.choice("g", "p.properties", "sky.dusk", "Dusk", ".", "stepped", "stepped", "Stepped", "smooth", "Smooth", "beta", "Beta")
+				.running(live::get)
+				.applyNow(v -> {
+					if (!v.equals("beta")) live.set(v);
+				});
+		r.add(dusk);
+		r.seal();
+		r.step(dusk);
+		assertEquals("smooth", live.get());
+		assertFalse(r.waitingForRestart(dusk));
+		r.step(dusk);
+		assertEquals("beta", r.value(dusk));
+		assertTrue(r.waitingForRestart(dusk));
+		r.step(dusk);
+		assertEquals("stepped", live.get());
+		assertFalse(r.waitingForRestart(dusk));
+	}
+
+	@Test
 	void valuesReadAsTheOwningModReadsThem() {
 		Setting fix = Setting.fix("g", "f", "k", "K", ".");
 		assertEquals("true", fix.normalize(" True "));

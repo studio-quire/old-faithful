@@ -40,7 +40,9 @@ another mod has put something there). Beta's own look throughout: its buttons, f
 - **When it takes effect**: a fix is in the game only if its switch was on at start (its mixins are skipped
   otherwise), so every fix waits for a restart: its button gets an asterisk ("Repeaters: Beta*") while the file
   differs from what's running, with "* Takes effect after a restart" under the buttons (the top screen says "Some
-  changes take effect after a restart"). At once: VSync, Even Frames, Smooth Look, Mouse and Fullscreen (set where
+  changes take effect after a restart"). A setting can be both (`applyNow` and `running`: Still Faithful's Dusk, live
+  between Stepped and Smooth, after a restart to or from Beta): it's marked while what's running differs from the
+  file. At once: VSync, Even Frames, Smooth Look, Mouse and Fullscreen (set where
   the display mod and our LWJGL read them; `Window.refreshSettings` for the mouse and fullscreen), and Lava Light
   (the lighting check reads it per chunk: it changes land as it loads, and light already in the world stays). After
   a restart: Remember Window, Start Maximized, Scale to Display, Quit Game Button.
@@ -86,6 +88,10 @@ decides when it's given.
 
 - Shift (sneak) to leave a vehicle, a later version's addition: beta's right-click on the vehicle stays the only way
   (user, 2026-11-02).
+- Antialiasing (multisampling the game's window, 2026-11-03): built and checked, then removed after the user's
+  play-test showed light blue (the sky) through the seams between blocks at 4x/8x. Multisampling reads the cracks
+  between beta's adjacent faces that single-sample rendering never lands on. Not important to the user, so dropped
+  rather than chased (the commit and its revert are in git if it's ever wanted).
 
 ## Tests
 

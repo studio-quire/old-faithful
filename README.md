@@ -59,6 +59,10 @@ its source, player-placed leaves decay, fences keep the hitbox behind the "smart
 food, and closing the window skips the last save (players use it to undo a loss). Worlds stay in beta's own format
 and open in the original game.
 
+**[Still Faithful](https://github.com/studio-quire/still-faithful)** is Old Faithful plus the polish later versions
+brought while the game stayed beta: animals you've looked after stay, boats break only in a real crash, stairs drop
+themselves, cut-off lava thins out, placed leaves stay, and dusk falls smoothly, each on a switch.
+
 ## Download and play
 
 You need a Minecraft account that owns the game, and [Prism Launcher](https://prismlauncher.org/).
