@@ -54,7 +54,7 @@ dependencies {
 
 tasks.register('serverTicksTest', Test) {
     group = 'verification'
-    description = 'The real dedicated server: a repeater clock still running after a save and restart (#42).'
+    description = 'The real dedicated server: a repeater clock still running after a save and restart (#42); the world fixes from the piston hunt.'
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
     useJUnitPlatform { includeTags 'server' }

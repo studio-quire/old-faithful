@@ -25,10 +25,13 @@ back (after a restart).
 - **The world.** Water flowing down drops the torches, rails and redstone it washes away. Slimes split however hard
   they're hit. Mobs that wake you can't reach you through a wall. Saddled pigs drop their saddle. Minecarts pass
   through dropped items and arrows. A fish is reeled in to your feet. Getting out of a boat no longer drops you
-  through it.
+  through it. Water one block deep breaks a fall from any height. Sneaking stops you at an inside corner too. Mobs
+  look at you without nodding. Mobs spawn beside water west and north of 0, 0 as they do elsewhere, and squid no
+  longer spawn in lava. Falling sand and gravel no longer delete blocks of their own kind.
 - **Redstone.** Repeaters work the doors, trapdoors, note blocks, dispensers, TNT and rail junctions they power.
   Repeater clocks keep running when the world is reloaded (waiting block updates are saved with their chunk). A
-  redstone torch doesn't burn out for good when the world's time goes back.
+  redstone torch doesn't burn out for good when the world's time goes back. A lone door top (in an edited world) no
+  longer deletes the block under it.
 - **Lighting.** Light as beta's own rule says it should be: no dark pockets under overhangs or at chunk edges, and
   lava from world generation lights its surroundings (a switch in `config/oldfaithful-lighting.properties`).
   Existing worlds heal as their chunks load.
@@ -40,7 +43,8 @@ back (after a restart).
   who teleport or come through a portal are seen by those already there. Chunks arrive nearest first after a fast
   move. The pause after breaking a block clears when you let go. Signs edited beside other changes show their text.
   Nothing near where you died stays frozen after you respawn. Other players no longer stay turned a few degrees
-  off where they face.
+  off where they face. Spawners show the mob they spawn, not always a pig. Explosions push a player who was just
+  hurt. A /tp in mid-fall doesn't land the fall. The server and your screen agree on when you're drowning.
 
 And a few options: a field-of-view slider (Options, beside Difficulty), the GUI at Normal size on a first start,
 Quit Game on the title screen, and a window that opens maximised the first time and where you left it after

@@ -144,8 +144,8 @@ fixes, are marked; the spread made the server's start faster than vanilla's own.
 
 - Lava lakes (on the surface and underground) light their surroundings as soon as they load, near or far, and the
   Nether's lava seas light the shores and air above them, as lava was always meant to (it's a light source; generation just never lit it). The largest visible change, and it
-  affects spawning: hostile mobs (zombie pigmen in the Nether) spawn only where it's dark, so fewer spawn right beside
-  lava.
+  affects spawning: the overworld's hostile mobs spawn only where it's dark, so fewer spawn right beside lava (the
+  Nether's pigmen and ghasts ignore light, `PigZombieEntity.canSpawn`, so nothing changes there).
 - The occasional dark pocket under an overhang or at a chunk border fills in.
 - Existing worlds change as they're played: each chunk is put right the first time it loads with the mod, and saved
   so. Nothing else in the world changes, and the files stay b1.7.3's.

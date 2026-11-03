@@ -40,6 +40,8 @@ public final class FixesSettings implements SettingsProvider {
 					"Middle click found nothing for redstone, doors, signs or beds, mixed up wool colours, and picked stone on a mob."},
 			{"items.badDataNames", "blocks", CLIENT, "Odd Item Names",
 					"A slab or dye with an impossible data value crashed the game when its name was shown."},
+			{"blocks.fallingSandKeepsKind", "blocks", WORLD, "Falling Sand",
+					"Falling sand or gravel deleted any block of its own kind it passed into."},
 
 			{"slimes.splitOnOverkill", "mobs", WORLD, "Slimes Splitting", "A big slime killed by one strong hit didn't split."},
 			{"pigs.saddleDrop", "mobs", WORLD, "Saddled Pigs", "A saddled pig lost its saddle when killed."},
@@ -49,6 +51,14 @@ public final class FixesSettings implements SettingsProvider {
 			{"minecarts.passItems", "mobs", WORLD, "Minecarts", "A dropped item or an arrow on the track stopped a minecart dead."},
 			{"fishing.catchToFeet", "mobs", WORLD, "Fishing Catch",
 					"A catch flew at your eyes and over your head from far out, unlike on a server."},
+			{"falls.waterLandings", "mobs", WORLD, "Water Landings",
+					"Falling into water one block deep hurt as on stone from about half of all heights."},
+			{"controls.sneakCorners", "mobs", CLIENT, "Sneaking at Corners",
+					"Sneaking didn't stop a diagonal step off an inside corner."},
+			{"mobs.headNod", "mobs", WORLD, "Mobs Nodding", "Mobs looking up or down at you nodded their heads every tick."},
+			{"spawning.besideWater", "mobs", WORLD, "Spawning by Water",
+					"West and north of 0, 0, mobs didn't spawn beside water or lava on their west or north side."},
+			{"spawning.squidInWater", "mobs", WORLD, "Squid in Lava", "Squid could spawn in lava, and burn."},
 
 			{"redstone.repeaterUpdates", "redstone", WORLD, "Repeaters",
 					"Doors, note blocks, dispensers, TNT and rails ignored a repeater beside them. Beta keeps circuits built on that."},
@@ -56,6 +66,8 @@ public final class FixesSettings implements SettingsProvider {
 					"Repeaters, falling sand and flowing water forgot their next step when unloaded: clocks stopped on reload."},
 			{"redstone.torchBurnout", "redstone", WORLD, "Torch Burnout",
 					"After the time was set back, redstone torches could burn out for good."},
+			{"doors.loneTop", "redstone", WORLD, "Lone Door Tops",
+					"A door's top half on its own deleted the block below when redstone changed beside it."},
 
 			{"sky.afterContainer", "looks", CLIENT, "Sky Behind Chests", "The sky turned grey while a chest, furnace or inventory was open."},
 			{"render.undersides", "looks", CLIENT, "Fence Undersides", "The undersides of fence bars drew black."},
@@ -77,11 +89,14 @@ public final class FixesSettings implements SettingsProvider {
 					"On a server, every block after the first started with a quarter-second pause."},
 			{"multiplayer.respawnEntities", "multiplayer", CLIENT, "After Respawning",
 					"Mobs and items gone while you were dead could stay frozen on screen. Fixed if either side has this fix."},
+			{"multiplayer.spawnerMobs", "multiplayer", CLIENT, "Spawner Mobs",
+					"Every spawner on a server showed a pig. Fixed where the server has this fix too."},
 	};
 
 	/** Fixes that run only on a server: a client's switch would change nothing, so they're left to the server's file. */
 	static final Set<String> SERVER_ONLY = new HashSet<>(Arrays.asList(
-			"multiplayer.refusedBreaks", "multiplayer.trackAfterTeleport", "multiplayer.chunkOrder", "multiplayer.signUpdates"));
+			"multiplayer.refusedBreaks", "multiplayer.trackAfterTeleport", "multiplayer.chunkOrder", "multiplayer.signUpdates",
+			"multiplayer.explosionPush", "multiplayer.tpFall", "multiplayer.drowningHeight"));
 
 	@Override
 	public void register(SettingsRegistry r) {

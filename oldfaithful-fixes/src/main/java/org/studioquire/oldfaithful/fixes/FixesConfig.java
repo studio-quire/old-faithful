@@ -127,6 +127,33 @@ public final class FixesConfig implements IMixinConfigPlugin {
 			{"multiplayer.turns", "turns",
 					"# #50 (client): other players and mobs often stopped a third of the way short of a turn and stayed facing\n"
 					+ "# up to about 11 degrees off.\n"},
+			{"doors.loneTop", "doors",
+					"# #55: a door's top half standing on its own (an edited or converted world) passed a redstone update to the\n"
+					+ "# block below as if it were the door's bottom: that block was removed and a door dropped.\n"},
+			{"falls.waterLandings", "landings",
+					"# #56: falling into water one block deep hurt as if landing on stone from about half of all heights.\n"},
+			{"controls.sneakCorners", "sneak",
+					"# #57 (client): sneaking didn't stop a diagonal step off an inside corner (an L of blocks).\n"},
+			{"multiplayer.explosionPush", "explosions",
+					"# #58 (server): an explosion didn't push a player who had been hurt in the last half second (or had just\n"
+					+ "# joined or respawned).\n"},
+			{"mobs.headNod", "nod",
+					"# #59: mobs looking up or down at you nodded their heads every tick.\n"},
+			{"multiplayer.tpFall", "tpfall",
+					"# #60 (server): a player moved by /tp in mid-fall took the fall as damage on landing wherever they arrived.\n"},
+			{"multiplayer.drowningHeight", "drowning",
+					"# #61 (server): the server measured drowning a little lower than the player's own game, so with the water's\n"
+					+ "# surface between the two it drowned a player whose screen showed full air.\n"},
+			{"multiplayer.spawnerMobs", "spawners",
+					"# #62 (both): on a server every mob spawner showed a spinning pig. A server with this sends what each spawns;\n"
+					+ "# a client with this shows it.\n"},
+			{"spawning.besideWater", "spawnbox",
+					"# #64: west and north of 0, 0, mobs didn't spawn with water or lava beside their west or north side.\n"},
+			{"spawning.squidInWater", "squid",
+					"# #66: squid could spawn in lava (and burn).\n"},
+			{"blocks.fallingSandKeepsKind", "fallingsand",
+					"# #67: falling sand or gravel deleted any block of its own kind it passed into (pushed by a piston into a\n"
+					+ "# column, or sand placed in its path).\n"},
 	};
 
 	private static final List<String> off = new ArrayList<>();

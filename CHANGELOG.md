@@ -5,6 +5,21 @@ its server package, and names the Pure Faithful release it's built on, whose mod
 that release has them; [Pure Faithful's changelog](https://github.com/studio-quire/pure-faithful/blob/main/CHANGELOG.md)
 covers those. Entries say what a player or server owner notices.
 
+## 0.1.1 (2026-11-02)
+
+On Pure Faithful 0.1.3, which brings its own fixes (see its changelog). New fixes, each on its own switch:
+
+- Falling into water one block deep no longer hurts from some heights as if you'd landed on stone.
+- Sneaking stops you at an inside corner when you step off it diagonally.
+- Mobs look up or down at you without nodding their heads.
+- West and north of 0, 0, mobs spawn beside water and lava as they do elsewhere; squid no longer spawn in lava.
+- Falling sand and gravel no longer delete blocks of their own kind they're pushed into.
+- A door's top half standing on its own (only in an edited world) no longer deletes the block under it.
+- Multiplayer: spawners show the mob they spawn, where both the server and the player have Old Faithful (a server
+  with it sends nothing vanilla clients would notice). Explosions push a player who was hurt a moment before. A /tp
+  in mid-fall no longer lands the fall at the other end. The server no longer drowns a player whose screen shows
+  full air (the two measured the water at slightly different heights).
+
 ## 0.1.0 (2026-11-02)
 
 The first release of Old Faithful, for Windows, on Pure Faithful 0.1.2.
